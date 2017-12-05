@@ -1,0 +1,44 @@
+<div class="row" ng-controller="ToDoController" ng-init="init()">
+	<button class="btn btn-primary btn-fab top right fixed" ng-click="openTaskModal()">
+		<span class="glyphicon glyphicon-plus"></span>
+	</button>
+	<script type="text/ng-template" id="TaskModal.html">
+		<div class="modal-header">
+			<h3 class="modal-title">Task Modal</h3>
+		</div>
+		<div class="modal-body">
+			<textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+		</div>
+		<div class="modal-footer">
+			<button class="btn-primary">Confirm</button>
+			<button class="btn-default pull-left">Confirm</button>
+		</div>
+	</script>
+	<div class="col-md-6">
+		<div class="list-group">
+			<div class="list-group-item list-group-header">
+				<label for="">{{ToDoLabel}}</label>
+			</div>
+			<div class="list-group-canvas">
+				<div class="list-group-item"
+					ng-repeat="Task in Tasks"
+					ng-click="SetActiveTask(Task)"
+					ng-class = "{active:Task===ActiveTask}">
+					<h4>{{Task}}</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="list-group">
+			<div class="list-group-item list-group-header">
+				<label for="">{{ActiveTask}}</label>
+			</div>
+			<div class="list-group-canvas">
+				<div class="list-group-item">
+					<h4>{{ActiveTask}}</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
