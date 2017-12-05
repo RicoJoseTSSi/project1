@@ -1,6 +1,6 @@
 "use strict";
 define(['app'],function(app){
-	app.register.controller('ToDoController',['$scope','$rootScope','$uiModal',function($scope,$rootScope,$uiModal){
+	app.register.controller('ToDoController',['$scope','$rootScope','$uibModal',function($scope,$rootScope,$uibModal){
 		$scope.init = function(){
 			$rootScope.__MODULE_NAME = 'ToDo';
 			$scope.ToDoLabel = 'My to do list';
@@ -14,13 +14,13 @@ define(['app'],function(app){
 			$scope.ActiveTask = task;
 		}
 		$scope.openTaskModal = function(){
-			var taskModal = $uiModal.open({
+			var taskModal = $uibModal.open({
 					'templateUrl':'TaskModal.html',
 					'controller':'TaskModalController'
 				});
 		}
 	}]);
-	app.register.controller('TaskModalController',['$scope','$uiModalInstance',function($scope,$uiModalInstance){
+	app.register.controller('TaskModalController',['$scope','$uibModalInstance',function($scope,$uibModalInstance){
 		
 	}]);
 });
