@@ -7,11 +7,11 @@
 			<h3 class="modal-title">Task Modal</h3>
 		</div>
 		<div class="modal-body">
-			<textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+			<textarea name="" id="" cols="30" rows="10" class="form-control" ng-model="NewTask"></textarea>
 		</div>
 		<div class="modal-footer">
-			<button class="btn-primary">Confirm</button>
-			<button class="btn-default pull-left">Confirm</button>
+			<button class="btn-primary" ng-click="confirmTask()">Confirm</button>
+			<button class="btn-default pull-left" ng-click="cancelTask()">Cancel</button>
 		</div>
 	</script>
 	<div class="col-md-6">
@@ -24,7 +24,7 @@
 					ng-repeat="Task in Tasks"
 					ng-click="SetActiveTask(Task)"
 					ng-class = "{active:Task===ActiveTask}">
-					<h4>{{Task}}</h4>
+					<h4>{{Task.title}}</h4>
 				</div>
 			</div>
 		</div>
@@ -32,11 +32,11 @@
 	<div class="col-md-6">
 		<div class="list-group">
 			<div class="list-group-item list-group-header">
-				<label for="">{{ActiveTask}}</label>
+				<label for="">{{ActiveTask.id}}</label>
 			</div>
 			<div class="list-group-canvas">
 				<div class="list-group-item">
-					<h4>{{ActiveTask}}</h4>
+					<h4>{{ActiveTask.title}}</h4>
 				</div>
 			</div>
 		</div>
